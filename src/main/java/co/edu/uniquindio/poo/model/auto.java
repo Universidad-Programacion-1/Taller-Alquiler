@@ -21,8 +21,11 @@ public class Auto extends Vehiculo {
     }
 
     
-    public double calcularCosto(){
-        int valorTotal = 0;
+    @Override
+    public double calcularCosto(double diasAlquiler){
+        double valorTotal = 0;
+        double tarifabase = 300000;
+        valorTotal = tarifabase * diasAlquiler;
         return valorTotal;
     }
 }

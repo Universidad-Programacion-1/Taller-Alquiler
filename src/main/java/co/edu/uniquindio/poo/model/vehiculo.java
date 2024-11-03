@@ -48,5 +48,5 @@ public abstract class Vehiculo {
         this.añoFabri = añoFabri;
     }
 
-    public abstract double calcularCosto();
+    public abstract double calcularCosto(double diasAlquiler);
 }

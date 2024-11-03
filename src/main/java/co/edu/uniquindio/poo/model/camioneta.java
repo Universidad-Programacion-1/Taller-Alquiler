@@ -18,9 +18,13 @@ public class Camioneta extends Vehiculo{
     public void setCargaToneladas(double cargaToneladas) {
         this.cargaToneladas = cargaToneladas;
     }
-    
-    public double calcularCosto(){
-        int valorTotal = 0;
+
+    @Override
+    public double calcularCosto(double diasAlquiler){
+        double toneladas = 100000;
+        double valorTotal = 0;
+        double tarifabase = 500000;
+        valorTotal = tarifabase * diasAlquiler +(getCargaToneladas() * toneladas);
         return valorTotal;
     }
 }
