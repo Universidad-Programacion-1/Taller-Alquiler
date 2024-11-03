@@ -35,12 +35,12 @@ public class VehiculoViewController {
 
     @FXML
     void onOpenMenu() {
-        app.onOpenCrudCamioneta();
+        //app.onOpenCrudCamioneta();
     }
 
     @FXML
     void onOpenCrudMoto() {
-        app.onOpenCrudCamioneta();
+        //app.onOpenCrudCamioneta();
     }
 
     @FXML

@@ -6,9 +6,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="574.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.ClienteViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="574.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.AutoViewController">
    <children>
-      <SplitPane layoutX="-1.0" layoutY="1.0" orientation="VERTICAL" prefHeight="751.0" prefWidth="582.0" style="-fx-border-color: blue;">
+      <SplitPane layoutX="-1.0" layoutY="1.0" orientation="VERTICAL" prefHeight="764.0" prefWidth="582.0" style="-fx-border-color: blue;">
          <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="771.0" prefWidth="571.0">
                <children>
@@ -73,16 +73,17 @@
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btbAgregarAuto" layoutX="163.0" layoutY="334.0" mnemonicParsing="false" onAction="#onAgregarCliente" style="-fx-border-color: black;" text="Agregar Auto">
+                  <Button fx:id="btbAgregarAuto" layoutX="163.0" layoutY="334.0" mnemonicParsing="false" onAction="#onAgregarAuto" style="-fx-border-color: black;" text="Agregar Auto">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnActualizarAuto" layoutX="354.0" layoutY="333.0" mnemonicParsing="false" onAction="#onActualizarCliente" style="-fx-border-color: black;" text="Actualizar Auto" textAlignment="CENTER">
+                  <Button fx:id="btnActualizarAuto" layoutX="354.0" layoutY="333.0" mnemonicParsing="false" onAction="#onActualizarAuto" style="-fx-border-color: black;" text="Actualizar Auto" textAlignment="CENTER">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
+                  <Button fx:id="btAtras" layoutX="524.0" layoutY="11.0" onAction="#onOpenMenu" prefHeight="7.0" prefWidth="46.0" style="-fx-border-color: BLACK; -fx-background-color: reD;" styleClass="B" text="X" textAlignment="CENTER" />
                </children>
             </AnchorPane>
          </items>
