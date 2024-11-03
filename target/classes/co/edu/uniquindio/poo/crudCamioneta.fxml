@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="744.0" prefWidth="574.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.ClienteViewController">
+   <children>
+      <SplitPane layoutX="-1.0" layoutY="1.0" orientation="VERTICAL" prefHeight="751.0" prefWidth="582.0" style="-fx-border-color: blue;">
+         <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="771.0" prefWidth="571.0">
+               <children>
+                  <Pane layoutX="51.0" layoutY="24.0" prefHeight="295.0" prefWidth="481.0" style="-fx-border-image-width: 1px;">
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <children>
+                        <Label layoutX="183.0" layoutY="14.0" text="Gestión Camioneta">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="87.0" layoutY="100.0" text="Marca">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="81.0" layoutY="140.0" text="Modelo">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCNumeroMatricula" layoutX="223.0" layoutY="60.0" prefHeight="25.0" prefWidth="194.0" style="-fx-border-color: black;" />
+                        <TextField fx:id="txtCMarca" layoutX="223.0" layoutY="100.0" prefHeight="25.0" prefWidth="194.0" style="-fx-border-color: black;" />
+                        <TextField fx:id="txtCModelo" layoutX="223.0" layoutY="140.0" prefHeight="25.0" prefWidth="194.0" style="-fx-border-color: black;" />
+                        <Label layoutX="25.0" layoutY="60.0" prefHeight="27.0" prefWidth="186.0" text="Numero de Matricula">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCAnoFabrica" layoutX="223.0" layoutY="180.0" prefHeight="25.0" prefWidth="194.0" style="-fx-border-color: black;" />
+                        <Label layoutX="52.0" layoutY="180.0" text="Año de Fabrica">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="34.0" layoutY="220.0" text="Carga en Toneladas">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCargaToneladas" layoutX="223.0" layoutY="220.0" prefHeight="25.0" prefWidth="194.0" style="-fx-border-color: black;" />
+                     </children>
+                  </Pane>
+                  <TableView fx:id="tblListCliente" layoutX="10.0" layoutY="412.0" prefHeight="288.0" prefWidth="560.0">
+                    <columns>
+                      <TableColumn fx:id="tbcCNumeroMatricula" prefWidth="138.0" text="Numero de Maticula" />
+                      <TableColumn fx:id="tbcCMarca" minWidth="6.0" prefWidth="79.0" text="Marca" />
+                        <TableColumn fx:id="tbcCModelo" minWidth="0.0" prefWidth="84.0" text="Modelo" />
+                        <TableColumn fx:id="tbcCAnoFabrica" minWidth="0.0" prefWidth="109.0" text="Año de Fabrica" />
+                        <TableColumn fx:id="tbcCargaTonelasdas" minWidth="0.0" prefWidth="163.0" text="Carga en Toneladas" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnEliminar" layoutX="354.0" layoutY="708.0" mnemonicParsing="false" onAction="#onEliminar" prefHeight="25.0" prefWidth="97.0" style="-fx-border-color: black;" text="Eliminar">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnLimpiar" layoutX="132.0" layoutY="708.0" mnemonicParsing="false" onAction="#onLimpiar" prefHeight="25.0" prefWidth="106.0" style="-fx-border-color: black;" text="Limpiar">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btbAgregarCamioneta" layoutX="132.0" layoutY="333.0" mnemonicParsing="false" onAction="#onAgregarCliente" style="-fx-border-color: black;" text="Agregar Camioneta">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnActualizarCamioneta" layoutX="354.0" layoutY="333.0" mnemonicParsing="false" onAction="#onActualizarCliente" style="-fx-border-color: black;" text="Actualizar Camioneta" textAlignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
