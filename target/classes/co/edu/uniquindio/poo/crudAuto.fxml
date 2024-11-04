@@ -54,7 +54,7 @@
                         <TextField fx:id="txtNumeroPuertas" layoutX="223.0" layoutY="220.0" prefHeight="25.0" prefWidth="194.0" style="-fx-border-color: black;" />
                      </children>
                   </Pane>
-                  <TableView fx:id="tblListCliente" layoutX="10.0" layoutY="412.0" prefHeight="288.0" prefWidth="560.0">
+                  <TableView fx:id="tblListAuto" layoutX="10.0" layoutY="412.0" prefHeight="288.0" prefWidth="560.0">
                     <columns>
                       <TableColumn fx:id="tbcNumeroMatricula" prefWidth="138.0" text="Numero de Maticula" />
                       <TableColumn fx:id="tbcMarca" minWidth="6.0" prefWidth="79.0" text="Marca" />

@@ -1,12 +1,12 @@
 package co.edu.uniquindio.poo.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Camioneta extends Vehiculo{
     
     private double cargaToneladas;
 
-    public Camioneta(String numMatricula, String marca, String modelo, Date añoFabri, double cargaToneladas) {
+    public Camioneta(String numMatricula, String marca, String modelo, LocalDate añoFabri, double cargaToneladas) {
         super(numMatricula, marca, modelo, añoFabri);
         this.cargaToneladas = cargaToneladas;
     }

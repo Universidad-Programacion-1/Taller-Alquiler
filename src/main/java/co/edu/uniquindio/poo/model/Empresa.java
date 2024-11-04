@@ -6,10 +6,12 @@ import java.util.LinkedList;
 public class Empresa {
     private String nombre;
     private Collection<Cliente> clientes;
+    private Collection<Auto> autos;
 
     public Empresa(String nombre) {
         this.nombre = nombre;
         clientes = new LinkedList<>();
+        autos = new LinkedList<>();
     }
 
     public String getNombre() {
@@ -26,6 +28,14 @@ public class Empresa {
 
     public void setClientes(Collection<Cliente> clientes) {
         this.clientes = clientes;
+    }
+
+    public Collection<Auto> getAutos() {
+        return autos;
+    }
+
+    public void setAutos(Collection<Auto> autos) {
+        this.autos = autos;
     }
 
     public boolean agregarCliente(Cliente cliente) {
@@ -67,6 +77,57 @@ public class Empresa {
         boolean centinela = false;
         for (Cliente cliente : clientes) {
             if (cliente.getCedula().equals(cedula)) {
+                centinela = true;
+            }
+        }
+        return centinela;
+    }
+
+    //Creacion de Auto
+    public boolean agregarAuto(Auto auto) {
+        boolean centinela = false;
+        if (!verificarAuto(auto.getNumMatricula())) {
+            autos.add(auto);
+            centinela = true;
+        }
+        return centinela;
+    }
+
+    //Eliminacion de Auto
+    public boolean eliminarAuto(String numMatricula) {
+        boolean centinela = false;
+        for (Auto auto : autos) {
+            if (auto.getNumMatricula().equals(numMatricula)) {
+                autos.remove(auto);
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    //Actualizacion de Auto
+    public boolean actualizarAuto(String numMatricula, Auto actualizado) {
+        boolean centinela = false;
+        for (Auto auto : autos) {
+            if (auto.getNumMatricula().equals(numMatricula)) {
+                auto.setNumMatricula(actualizado.getNumMatricula());
+                auto.setMarca(actualizado.getMarca());
+                auto.setModelo(actualizado.getModelo());
+                auto.setAnoFabrica(actualizado.getAnoFabrica());
+                auto.setNumPuertas(actualizado.getNumPuertas());
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    //Verificaccion de Auto
+    public boolean verificarAuto(String numMatricula) {
+        boolean centinela = false;
+        for (Auto auto : autos) {
+            if (auto.getNumMatricula().equals(numMatricula)) {
                 centinela = true;
             }
         }

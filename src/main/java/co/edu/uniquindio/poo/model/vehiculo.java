@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public abstract class Vehiculo {
@@ -7,13 +8,13 @@ public abstract class Vehiculo {
     private String numMatricula;
     private String marca;
     private String modelo;
-    private Date añoFabri;
+    private LocalDate anoFabrica;
 
-    public Vehiculo(String numMatricula, String marca, String modelo, Date añoFabri) {
+    public Vehiculo(String numMatricula, String marca, String modelo, LocalDate anoFabrica) {
         this.numMatricula = numMatricula;
         this.marca = marca;
         this.modelo = modelo;
-        this.añoFabri = añoFabri;
+        this.anoFabrica = anoFabrica;
     }
 
     public String getNumMatricula() {
@@ -40,12 +41,12 @@ public abstract class Vehiculo {
         this.modelo = modelo;
     }
 
-    public Date getAñoFabri() {
-        return añoFabri;
+    public LocalDate getAnoFabrica() {
+        return anoFabrica;
     }
 
-    public void setAñoFabri(Date añoFabri) {
-        this.añoFabri = añoFabri;
+    public void setAnoFabrica(LocalDate añoFabri) {
+        this.anoFabrica = añoFabri;
     }
 
     public abstract double calcularCosto(double diasAlquiler);

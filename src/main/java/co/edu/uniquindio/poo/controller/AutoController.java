@@ -13,19 +13,19 @@ public class AutoController {
         this.empresa = empresa;
     }
 
-    // public boolean crearAuto(Auto auto) {
-    //     return empresa.agregarCliente(auto);
-    // }
+    public boolean crearAuto(Auto auto) {
+        return empresa.agregarAuto(auto);
+    }
 
-    // public Collection<Auto> obtenerListaAutos() {
-    //     return empresa.getClientes();
-    // }
+    public Collection<Auto> obtenerListaAutos() {
+        return empresa.getAutos();
+    }
 
-    // public boolean eliminarAuto(String numMatricula) {
-    //    return empresa.eliminarCliente(numMatricula);
-    // }
+    public boolean eliminarAuto(String numMatricula) {
+        return empresa.eliminarAuto(numMatricula);
+    }
 
-    // public boolean actualizarAuto(String numMatricula, Auto auto) {
-    //    return empresa.actualizarCliente(numMatricula, auto);
-    // }
+    public boolean actualizarAuto(String numMatricula, Auto auto) {
+        return empresa.actualizarAuto(numMatricula, auto);
+    }
 }
