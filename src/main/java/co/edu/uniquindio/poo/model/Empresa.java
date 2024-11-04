@@ -6,6 +6,8 @@ import java.util.LinkedList;
 public class Empresa {
     private String nombre;
     private Collection<Cliente> clientes;
+    private Collection<Vehiculo> vehiculos;
+    
 
     public Empresa(String nombre) {
         this.nombre = nombre;
@@ -72,4 +74,5 @@ public class Empresa {
         }
         return centinela;
     }
+
 }

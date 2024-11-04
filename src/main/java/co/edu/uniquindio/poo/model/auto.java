@@ -1,5 +1,5 @@
 package co.edu.uniquindio.poo.model;
 
-public class auto {
+public class Auto {
     
 }

@@ -22,6 +22,14 @@ public class PrimaryController {
   void onOpenCrudCliente() {
     app.openCrudCliente();
   }
+  @FXML
+  void onOpenCrudVehiculo() {
+    app.openMenuVehiculo();
+  }
+  @FXML
+  void onOpenCrudAlquiler() {//modificar
+    app.onOpenCrudAlquiler();
+  }
 
   public void setApp(App app) {
       this.app = app;
