@@ -49,6 +49,9 @@ public class ClienteViewController {
     private TextField txtApellido;
 
     @FXML
+    private Button btbAtras;
+
+    @FXML
     private TableColumn<Cliente, String> tbcApellido;
 
     @FXML
@@ -69,6 +72,11 @@ public class ClienteViewController {
     @FXML
     void onActualizarCliente() {
         actualizarCliente();
+    }
+
+    @FXML
+    void onbAtrasAction() {
+        app.openCrudEmpresa();
     }
 
     @FXML
