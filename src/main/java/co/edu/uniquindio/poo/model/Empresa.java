@@ -147,7 +147,7 @@ public class Empresa {
     //Creacion de Camioneta
     public boolean agregarCamioneta(Camioneta camioneta) {
         boolean centinela = false;
-        if (!verificarAuto(camioneta.getNumMatricula())) {
+        if (!verificarCamioneta(camioneta.getNumMatricula())) {
             camionetas.add(camioneta);
             centinela = true;
         }

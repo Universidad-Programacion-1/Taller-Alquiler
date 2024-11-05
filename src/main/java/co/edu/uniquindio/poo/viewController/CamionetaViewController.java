@@ -5,15 +5,12 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.poo.App;
-import co.edu.uniquindio.poo.controller.AutoController;
 import co.edu.uniquindio.poo.controller.CamionetaController;
-import co.edu.uniquindio.poo.model.Auto;
 import co.edu.uniquindio.poo.model.Camioneta;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -169,7 +166,7 @@ public class CamionetaViewController {
     }
     
     private Camioneta buildCamioneta() {
-        Camioneta camioneta = new Camioneta(txtCNumeroMatricula.getText(), txtCMarca.getText(), txtCModelo.getText(), LocalDate.parse(txtCAnoFabrica.getText()), Double.parseDouble(tbcCargaTonelasdas.getText()));
+        Camioneta camioneta = new Camioneta(txtCNumeroMatricula.getText(), txtCMarca.getText(), txtCModelo.getText(), LocalDate.parse(txtCAnoFabrica.getText()), Double.parseDouble(txtCargaToneladas.getText()));
         return camioneta;
     }
 
