@@ -306,6 +306,27 @@ public class Empresa {
     public Collection<Alquiler> getAlquilers() {
         return alquilers;
     }
+
+    public Vehiculo buscarVehiculo (String id){
+        System.out.println("Veiculooooooooooooooooooooooooooooooooooooooooooooooooo"+ id);
+        Vehiculo vehiculo = null;
+        for (Vehiculo camioneta : camionetas) {
+            if (camioneta.getNumMatricula().equals(id)) {
+                vehiculo = camioneta;
+            }
+        }
+        for (Vehiculo auto : autos) {
+            if (auto.getNumMatricula().equals(id)) {
+                vehiculo = auto;
+            }
+        }
+        for (Vehiculo moto : motos) {
+            if (moto.getNumMatricula().equals(id)) {
+                vehiculo = moto;
+            }
+        }
+        return vehiculo;
+    }
     public void calcularCostoTotal(Vehiculo vehiculo, Alquiler alquiler){
         vehiculo.calcularCosto(alquiler.getDiasAlquiler());
     }

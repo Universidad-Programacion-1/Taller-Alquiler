@@ -16,10 +16,6 @@ public class Alquiler {
         this.diasAlquiler = diasAlquiler;
         this.costo = vehiculo.calcularCosto(diasAlquiler);
     }
-    
-    public Alquiler(String text, String text2, String text3, String text4) {
-        //TODO Auto-generated constructor stub
-    }
 
     public double getDiasAlquiler() {
         return diasAlquiler;

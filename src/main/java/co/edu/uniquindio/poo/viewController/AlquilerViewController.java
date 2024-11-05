@@ -14,9 +14,11 @@ import co.edu.uniquindio.poo.controller.AlquilerController;
 import co.edu.uniquindio.poo.model.Alquiler;
 import co.edu.uniquindio.poo.model.Vehiculo;
 public class AlquilerViewController {
+    
     AlquilerController alquilerController;
     ObservableList<Alquiler> listAlquilers = FXCollections.observableArrayList();
     Alquiler selectedAlquiler;
+    Vehiculo selectedVehiculo;
 
     @FXML
     private TextField rtxVehiculo;
@@ -46,7 +48,7 @@ public class AlquilerViewController {
     private TableColumn<Alquiler, String> tbcIdentificacion;
 
     @FXML
-    private TableColumn<Vehiculo, Double> tbcCosto;
+    private TableColumn<Alquiler, Double> tbcCosto;
 
     @FXML
     private TextField rtxPlaca;
@@ -56,7 +58,7 @@ public class AlquilerViewController {
     private TableView<Alquiler> tblListAlquilerVehiculo;
     
     @FXML
-    private TableColumn<Vehiculo, String> tbcPlaca;
+    private TableColumn<Alquiler, String> tbcPlaca;
 
     @FXML
     private TextField rtxDiasReservado;
@@ -88,7 +90,7 @@ public class AlquilerViewController {
 
     @FXML
     void onOpenMenu() {
-        app.openMenuVehiculo();
+        app.openCrudEmpresa();
     }
 
     @FXML
@@ -117,10 +119,10 @@ public class AlquilerViewController {
     
     private void initDataBinding() {
         tbcIdentificacion.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getIdentificacion()));
-        tbcPlaca.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNumMatricula()));
+        //tbcPlaca.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().()));
         tbcDiasReservado.setCellValueFactory(cellData -> new SimpleObjectProperty(cellData.getValue().getDiasAlquiler()));
         tbcVehiculo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNomVehiculo()));
-        //tbcCosto.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().ge()));
+        tbcCosto.setCellValueFactory(cellData -> new SimpleObjectProperty(cellData.getValue().getCosto()));
     }
 
     private void obtenerAlquiler() {
@@ -130,14 +132,13 @@ public class AlquilerViewController {
     private void listenerSelection() {
         tblListAlquilerVehiculo.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             selectedAlquiler = newSelection;
-            mostrarInformacionAlquiler(null, newSelection);
+            mostrarInformacionAlquiler(newSelection);
         });
     }
 
-    private void mostrarInformacionAlquiler(Vehiculo vehiculo, Alquiler alquiler) {
+    private void mostrarInformacionAlquiler(Alquiler alquiler) {
         if (alquiler != null) {
             rtxIdentificacion.setText(alquiler.getIdentificacion());
-            rtxPlaca.setText(vehiculo.getNumMatricula());
             rtxVehiculo.setText(alquiler.getNomVehiculo());
             rtxDiasReservado.setText(String.valueOf(alquiler.getDiasAlquiler()));
         }
@@ -152,9 +153,8 @@ public class AlquilerViewController {
     }
 
     private Alquiler buildAlquiler() {
-        // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        // LocalDate fecha = LocalDate.parse(fechaTexto, formatter);
-        Alquiler alquiler = new Alquiler(rtxDiasReservado.getText(), rtxIdentificacion.getText(), rtxPlaca.getText(),  rtxVehiculo.getText());
+        Vehiculo vehiculo = alquilerController.buscarVehiculo(rtxIdentificacion.getText());
+        Alquiler alquiler = new Alquiler(rtxIdentificacion.getText(), rtxVehiculo.getText(), Double.parseDouble(rtxDiasReservado.getText()), vehiculo);
         return alquiler;
     }
 
@@ -188,11 +188,9 @@ public class AlquilerViewController {
     }
 
     private void limpiarCamposAlquiler() {
-        rtxPlaca.clear();
+        rtxDiasReservado.clear();
         rtxIdentificacion.clear();
         rtxVehiculo.clear();
-        rtxDiasReservado.clear();
-        //tbcCosto.clear();
     }
 
 

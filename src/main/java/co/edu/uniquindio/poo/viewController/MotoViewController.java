@@ -27,6 +27,9 @@ public class MotoViewController {
     Moto selectedMoto;
 
     @FXML
+    private Button dtnAtras;
+    
+    @FXML
     private ResourceBundle resources;
 
     @FXML

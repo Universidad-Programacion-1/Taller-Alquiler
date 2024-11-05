@@ -56,6 +56,7 @@
                      </children>
                   </Pane>
                   <Button fx:id="btnActualizarMoto" layoutX="227.0" layoutY="254.0" mnemonicParsing="false" onAction="#onActualizarMoto" text="Actualizar Moto" />
+                  <Button fx:id="dtnAtras" layoutX="384.0" layoutY="12.0" mnemonicParsing="false" onAction="#onOpenMenu" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: red; -fx-border-color: black;" text="X" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="284.0" prefWidth="451.0">
@@ -77,4 +78,3 @@
       </SplitPane>
    </children>
 </AnchorPane>
-

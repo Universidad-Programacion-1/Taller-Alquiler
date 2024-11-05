@@ -39,7 +39,7 @@ public class VehiculoViewController {
 
     @FXML
     void onOpenCrudMoto() {
-        //app.onOpenCrudCamioneta();
+        app.onOpenCrudMoto();
     }
 
     @FXML

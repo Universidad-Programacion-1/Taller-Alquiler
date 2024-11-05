@@ -36,7 +36,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Gestion de ");
+		this.primaryStage.setTitle("Gestion de Empresa");
         openCrudEmpresa();
     }
 
@@ -102,10 +102,12 @@ public class App extends Application {
         Auto auto = new Auto("1234", "YAMAHA", "2000", LocalDate.now(), 5);
         Camioneta camioneta = new Camioneta("12377", "HONDA", "2020", LocalDate.now(), 10);
         Moto moto = new Moto("TAN11G", "STYLESHEET_CASPIAN", "STYLESHEET_MODENA", LocalDate.now(), "manual");
+        Alquiler alquiler = new Alquiler("TAN11G", "STYLESHEET_CASPIAN", 5, moto);
         empresa.agregarCliente(cliente);
         empresa.agregarAuto(auto);
         empresa.agregarCamioneta(camioneta);
         empresa.agregarMoto(moto);
+        empresa.agregarAlquiler(alquiler);
     }
 
     //REDIRECCION CARLOS
