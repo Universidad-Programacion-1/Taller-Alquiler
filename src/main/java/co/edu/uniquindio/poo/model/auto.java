@@ -1,9 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
 import java.time.LocalDate;
-import java.util.Date;
-
-import javafx.scene.control.TextFormatter;
 
 public class Auto extends Vehiculo {
 
