@@ -31,7 +31,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Gestion de Clientes");
+		this.primaryStage.setTitle("Gestion de ");
         openCrudEmpresa();
     }
 
