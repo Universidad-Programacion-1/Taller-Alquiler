@@ -27,8 +27,8 @@ public class PrimaryController {
     app.openMenuVehiculo();
   }
   @FXML
-  void onOpenCrudAlquiler() {//modificar
-    app.onOpenCrudAlquiler();
+  void onOpenCrudAlquiler() {
+   // app.onOpenCrudAlquiler();
   }
 
   public void setApp(App app) {
