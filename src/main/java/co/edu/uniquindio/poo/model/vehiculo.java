@@ -1,7 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public abstract class Vehiculo {
 

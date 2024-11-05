@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 import co.edu.uniquindio.poo.model.Auto;
+import co.edu.uniquindio.poo.model.Camioneta;
 import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Empresa;
 import co.edu.uniquindio.poo.viewController.AutoViewController;
@@ -94,8 +95,10 @@ public class App extends Application {
     public void inicializarData(){
         Cliente cliente = new Cliente("12233", "juan", "apellido");
         Auto auto = new Auto("1234", "YAMAHA", "2000", LocalDate.now(), 5);
+        Camioneta camioneta = new Camioneta("12377", "HONDA", "2020", LocalDate.now(), 10);
         empresa.agregarCliente(cliente);
         empresa.agregarAuto(auto);
+        empresa.agregarCamioneta(camioneta);
     }
 
     //REDIRECCION CARLOS
