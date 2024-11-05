@@ -1,11 +1,17 @@
 package co.edu.uniquindio.poo;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
-import co.edu.uniquindio.poo.model.Cliente;
+
+
 import co.edu.uniquindio.poo.model.Empresa;
-import co.edu.uniquindio.poo.viewController.ClienteViewController;
+import co.edu.uniquindio.poo.model.Moto;
+
+
+import co.edu.uniquindio.poo.viewController.MotoViewController;
 import co.edu.uniquindio.poo.viewController.PrimaryController;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,8 +24,10 @@ import javafx.stage.Stage;
 public class App extends Application {
 
     private Stage primaryStage;
+    
     public static Empresa empresa = new Empresa("UQ");
 
+    @SuppressWarnings("exports")
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
@@ -49,13 +57,20 @@ public class App extends Application {
         launch();
     }
 
-    public void openCrudCliente() {
+    public void inicializarData(){
+        Moto moto = new Moto("TAN11G", "YAMAHA", "2024", LocalDate.now(), "automatica"  );
+        empresa.agregarMoto(moto);
+        empresa.agregarMoto(moto);
+    }
+
+    
+    public void OpenCrudMoto() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("crudCliente.fxml"));
+            loader.setLocation(App.class.getResource("crudCamioneta.fxml"));
             AnchorPane rootLayout = (AnchorPane) loader.load();
-            ClienteViewController clienteViewController = loader.getController();
-            clienteViewController.setApp(this);
+            MotoViewController motoViewController = loader.getController();
+            motoViewController.setApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
@@ -64,12 +79,5 @@ public class App extends Application {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-    }
-
-    //servicios
-
-    public void inicializarData(){
-        Cliente cliente = new Cliente("12233", "juan", "apellido");
-        empresa.agregarCliente(cliente);
     }
 }

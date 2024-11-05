@@ -18,9 +18,17 @@ public class PrimaryController {
   @FXML
   private Button primaryButton;
 
+  //@FXML
+  //void onOpenCrudCliente() {
+  //  app.openCrudCliente();
+  //}
   @FXML
-  void onOpenCrudCliente() {
-    app.openCrudCliente();
+  void onOpenCrudMoto() {
+    app.OpenCrudMoto();
+  }
+  @FXML
+  void onOpenCrudAlquiler() {
+   // app.onOpenCrudAlquiler();
   }
 
   public void setApp(App app) {
