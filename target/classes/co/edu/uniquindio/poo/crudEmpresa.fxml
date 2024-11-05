@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="209.0" prefWidth="305.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.EmpresaViewController">
+   <children>
+      <Label layoutX="32.0" layoutY="14.0" prefHeight="35.0" prefWidth="238.0" text="Gestion De Empresa" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator prefWidth="200.0" />
+      <Button fx:id="btnGestionarVehiculo" layoutX="58.0" layoutY="149.0" mnemonicParsing="false" onAction="#gestionarVehiculoAction" prefHeight="35.0" prefWidth="173.0" text="Gestionar Vehiculo" textAlignment="JUSTIFY" />
+      <Separator prefHeight="4.0" prefWidth="305.0" />
+      <Button fx:id="btnGestionarCliente" layoutX="58.0" layoutY="99.0" mnemonicParsing="false" onAction="#gestionarClienteAction" prefHeight="35.0" prefWidth="173.0" text="Gestionar Cliente" />
+      <Separator prefHeight="4.0" prefWidth="305.0" />
+      <Button fx:id="btnGestionarReserva" layoutX="55.0" layoutY="201.0" mnemonicParsing="false" onAction="#gestionarReservaAction" prefHeight="35.0" prefWidth="173.0" text="Gestionar Reserva" />
+   </children>
+</VBox>

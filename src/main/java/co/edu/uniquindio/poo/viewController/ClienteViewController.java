@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.ClienteController;
 import co.edu.uniquindio.poo.model.Cliente;
-import co.edu.uniquindio.poo.model.Empresa;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,8 +20,6 @@ public class ClienteViewController {
     ClienteController clienteController;
     ObservableList<Cliente> listClientes = FXCollections.observableArrayList();
     Cliente selectedCliente;
-    Empresa empresa;
-    
 
     @FXML
     private ResourceBundle resources;
@@ -52,6 +49,9 @@ public class ClienteViewController {
     private TextField txtApellido;
 
     @FXML
+    private Button btbAtras;
+
+    @FXML
     private TableColumn<Cliente, String> tbcApellido;
 
     @FXML
@@ -72,6 +72,11 @@ public class ClienteViewController {
     @FXML
     void onActualizarCliente() {
         actualizarCliente();
+    }
+
+    @FXML
+    void onbAtrasAction() {
+        app.openCrudEmpresa();
     }
 
     @FXML

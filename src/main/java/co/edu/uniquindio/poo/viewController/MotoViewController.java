@@ -1,10 +1,9 @@
 package co.edu.uniquindio.poo.viewController;
 
 import java.net.URL;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.time.LocalDate;
-import java.util.Date;
+
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleObjectProperty;
 import co.edu.uniquindio.poo.App;
@@ -14,7 +13,7 @@ import co.edu.uniquindio.poo.model.Moto;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -75,19 +74,22 @@ public class MotoViewController {
     @FXML
     private TextField txtMarca;
 
+
     @FXML
     private Button btbAgregarMoto;
 
     private App app;
 
+
     @FXML
-    void onEliminar() {
-        eliminarMoto();
+    void onLimpiarMoto() {
+        limpiarSeleccion();
+
     }
 
     @FXML
-    void onLimpiar() {
-        limpiarSeleccion();
+    void onEliminarMoto() {
+        eliminarMoto();
     }
 
     @FXML
@@ -99,11 +101,11 @@ public class MotoViewController {
     void onActualizarMoto() {
         actualizarMoto();
     }
-
-    //@FXML
-    //void onOpenMenu(ActionEvent event) {
-    //    app.openMenuVehiculo();
-    //}
+    
+    @FXML
+    void onOpenMenu() {
+        app.openMenuVehiculo();
+    }
 
     @FXML
     void initialize() {
@@ -167,10 +169,10 @@ public class MotoViewController {
         }
     }
 
-    public Date parse(String dateString) throws ParseException {
-         SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-        return formatoFecha.parse(dateString);
-    }
+    //public Date parse(String dateString) throws ParseException {
+    //     SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+    //    return formatoFecha.parse(dateString);
+    //}
     
     private Moto buildMoto() {
         // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");

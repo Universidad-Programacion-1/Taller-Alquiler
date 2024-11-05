@@ -8,13 +8,12 @@ public class Alquiler {
     Vehiculo vehiculo;
     Cliente cliente;
     private double costo;
-    public Alquiler( String nomVehiculo, String identificacion, double diasAlquiler,double costo) {
+    public Alquiler( String nomVehiculo, String identificacion, double diasAlquiler, Vehiculo vehiculo) {
         
         this.nomVehiculo = nomVehiculo;
         this.identificacion = identificacion;
         this.vehiculo = vehiculo;
         this.diasAlquiler = diasAlquiler;
-        this.cliente = cliente;
         this.costo = vehiculo.calcularCosto(diasAlquiler);
     }
     

@@ -4,6 +4,7 @@ import co.edu.uniquindio.poo.App;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -36,6 +37,9 @@ public class AlquilerViewController {
     private TextField rtxIdentificacion;
 
     @FXML
+    private Button dtnAtras;
+
+    @FXML
     private Button btbLimpiarVehiculo;
 
     @FXML
@@ -59,6 +63,7 @@ public class AlquilerViewController {
 
     @FXML
     private Button btbActualizarVehiculo;
+
     private App app;
 
     @FXML
@@ -81,10 +86,10 @@ public class AlquilerViewController {
         actualizarAlquiler();
     }
 
-    //@FXML
-    //void onOpenMenu(ActionEvent event) {
-    //    app.openMenuVehiculo();
-    //}
+    @FXML
+    void onOpenMenu() {
+        app.openMenuVehiculo();
+    }
 
     @FXML
     void initialize() {
@@ -116,9 +121,6 @@ public class AlquilerViewController {
         tbcDiasReservado.setCellValueFactory(cellData -> new SimpleObjectProperty(cellData.getValue().getDiasAlquiler()));
         tbcVehiculo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNomVehiculo()));
         //tbcCosto.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().ge()));
-        
-        
-        
     }
 
     private void obtenerAlquiler() {
@@ -192,6 +194,7 @@ public class AlquilerViewController {
         rtxDiasReservado.clear();
         //tbcCosto.clear();
     }
+
 
     /**
      * @param app

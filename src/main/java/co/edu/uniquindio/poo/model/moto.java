@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Moto extends Vehiculo {
     private String tipoCaja;
-    Alquiler alquiler;
+    
     
     public Moto(String numMatricula, String marca, String modelo, LocalDate anoFabrica, String tipoCaja) {
         super(numMatricula, marca, modelo, anoFabrica);
@@ -25,11 +25,11 @@ public class Moto extends Vehiculo {
         double tarifabase = 200.000;
         double tarifaAutomatica = 50.000;
         if(tipoCaja=="automatica"){
-            valorTotal = tarifabase*alquiler.getDiasAlquiler();
+            valorTotal = tarifabase*diasAlquiler;
             valorTotal += tarifaAutomatica;
         }
         if(tipoCaja=="manual"){
-            valorTotal = tarifabase*alquiler.getDiasAlquiler();
+            valorTotal = tarifabase*diasAlquiler;
         }
         return valorTotal;
     }
