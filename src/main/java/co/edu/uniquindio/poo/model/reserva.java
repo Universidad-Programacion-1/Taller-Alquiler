@@ -1,5 +1,5 @@
 package co.edu.uniquindio.poo.model;
 
-public class Reserva {
+public class reserva {
     
 }

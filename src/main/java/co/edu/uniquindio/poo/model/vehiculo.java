@@ -1,5 +1,5 @@
 package co.edu.uniquindio.poo.model;
 
-public abstract class Vehiculo {
+public abstract class vehiculo {
     
 }
