@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Camioneta extends Vehiculo{
     
-    private double cargaToneladas;
+    private Double cargaToneladas;
 
     public Camioneta(String numMatricula, String marca, String modelo, LocalDate añoFabri, double cargaToneladas) {
         super(numMatricula, marca, modelo, añoFabri);
@@ -15,7 +15,7 @@ public class Camioneta extends Vehiculo{
         return cargaToneladas;
     }
 
-    public void setCargaToneladas(double cargaToneladas) {
+    public void setCargaToneladas(Double cargaToneladas) {
         this.cargaToneladas = cargaToneladas;
     }
 

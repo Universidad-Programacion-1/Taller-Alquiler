@@ -7,11 +7,13 @@ public class Empresa {
     private String nombre;
     private Collection<Cliente> clientes;
     private Collection<Auto> autos;
+    private Collection<Camioneta> camionetas;
 
     public Empresa(String nombre) {
         this.nombre = nombre;
         clientes = new LinkedList<>();
         autos = new LinkedList<>();
+        camionetas = new LinkedList<>();
     }
 
     public String getNombre() {
@@ -36,6 +38,14 @@ public class Empresa {
 
     public void setAutos(Collection<Auto> autos) {
         this.autos = autos;
+    }
+
+    public Collection<Camioneta> getCamionetas() {
+        return camionetas;
+    }
+
+    public void setCamionetas(Collection<Camioneta> camionetas) {
+        this.camionetas = camionetas;
     }
 
     public boolean agregarCliente(Cliente cliente) {
@@ -128,6 +138,57 @@ public class Empresa {
         boolean centinela = false;
         for (Auto auto : autos) {
             if (auto.getNumMatricula().equals(numMatricula)) {
+                centinela = true;
+            }
+        }
+        return centinela;
+    }
+
+    //Creacion de Camioneta
+    public boolean agregarCamioneta(Camioneta camioneta) {
+        boolean centinela = false;
+        if (!verificarAuto(camioneta.getNumMatricula())) {
+            camionetas.add(camioneta);
+            centinela = true;
+        }
+        return centinela;
+    }
+
+    //Eliminacion de Camioneta
+    public boolean eliminarCamioneta(String numMatricula) {
+        boolean centinela = false;
+        for (Camioneta camioneta : camionetas) {
+            if (camioneta.getNumMatricula().equals(numMatricula)) {
+                camionetas.remove(camioneta);
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    //Actualizacion de Camioneta
+    public boolean actualizarCamioneta(String numMatricula, Camioneta actualizado) {
+        boolean centinela = false;
+        for (Camioneta camioneta : camionetas) {
+            if (camioneta.getNumMatricula().equals(numMatricula)) {
+                camioneta.setNumMatricula(actualizado.getNumMatricula());
+                camioneta.setMarca(actualizado.getMarca());
+                camioneta.setModelo(actualizado.getModelo());
+                camioneta.setAnoFabrica(actualizado.getAnoFabrica());
+                camioneta.setCargaToneladas(actualizado.getCargaToneladas());
+                centinela = true;
+                break;
+            }
+        }
+        return centinela;
+    }
+
+    //Verificaccion de Camioneta
+    public boolean verificarCamioneta(String numMatricula) {
+        boolean centinela = false;
+        for (Camioneta camioneta : camionetas) {
+            if (camioneta.getNumMatricula().equals(numMatricula)) {
                 centinela = true;
             }
         }

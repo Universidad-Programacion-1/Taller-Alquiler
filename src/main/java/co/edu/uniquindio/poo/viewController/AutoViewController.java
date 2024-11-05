@@ -104,7 +104,7 @@ public class AutoViewController {
     }
 
     @FXML
-    void onOpenMenu(ActionEvent event) {
+    void onOpenMenu() {
         app.openMenuVehiculo();
     }
 

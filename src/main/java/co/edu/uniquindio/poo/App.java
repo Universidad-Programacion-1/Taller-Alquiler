@@ -4,11 +4,13 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 import co.edu.uniquindio.poo.model.Auto;
+import co.edu.uniquindio.poo.model.Camioneta;
 import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Empresa;
 import co.edu.uniquindio.poo.viewController.AutoViewController;
 import co.edu.uniquindio.poo.viewController.CamionetaViewController;
 import co.edu.uniquindio.poo.viewController.ClienteViewController;
+import co.edu.uniquindio.poo.viewController.EmpresaViewController;
 import co.edu.uniquindio.poo.viewController.PrimaryController;
 import co.edu.uniquindio.poo.viewController.VehiculoViewController;
 import javafx.application.Application;
@@ -23,14 +25,14 @@ import javafx.stage.Stage;
 public class App extends Application {
 
     private Stage primaryStage;
+    @SuppressWarnings("exports")
     public static Empresa empresa = new Empresa("UQ");
 
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Gestion de Clientes");
-        // openViewPrincipal();
-        openMenuVehiculo();
+        openCrudEmpresa();
     }
 
     private void openViewPrincipal() {
@@ -71,14 +73,32 @@ public class App extends Application {
             e.printStackTrace();
         }
     }
+    public void openCrudEmpresa() {
+        inicializarData();
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("crudEmpresa.fxml"));
+            javafx.scene.layout.VBox rootLayout = (javafx.scene.layout.VBox) loader.load();
+            EmpresaViewController empresaViewController = loader.getController();
+            empresaViewController.setApp(this);
 
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
     //servicios
 
     public void inicializarData(){
         Cliente cliente = new Cliente("12233", "juan", "apellido");
         Auto auto = new Auto("1234", "YAMAHA", "2000", LocalDate.now(), 5);
+        Camioneta camioneta = new Camioneta("12377", "HONDA", "2020", LocalDate.now(), 10);
         empresa.agregarCliente(cliente);
         empresa.agregarAuto(auto);
+        empresa.agregarCamioneta(camioneta);
     }
 
     //REDIRECCION CARLOS
